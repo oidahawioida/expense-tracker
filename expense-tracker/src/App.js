@@ -1,20 +1,36 @@
 import "./App.css";
-import Card from "./components/Card";
+import Balance from "./components/Balance";
+import Header from "./components/Header";
+import History from "./components/History";
+import Transaction from "./components/Transaction";
 
 function App() {
-  const data = [321, 172, -341, 87, 12, 16, -38];
+  const transactions = [
+    {
+      title: "Taschengeld",
+      amount: 45,
+    },
+    {
+      title: "Motto Party",
+      amount: -50,
+    },
+    {
+      title: "Gürtel",
+      amount: -90,
+    },
+    {
+      title: "Preisgeld",
+      amount: 120,
+    },
+  ];
 
   return (
-    <div>
-      <h1>Überschrift</h1>
-      <p>
-        Das ist ein beliebiger Text.{" "}
-        {3 > 2 ? "Bewundernswert" : "besorgniserregend"}
-      </p>
-      {data.map((el) => (
-        <Card value={el} />
-      ))}
-    </div>
+    <>
+      <Header />
+      <Balance transactions={transactions} />
+      <History />
+      <Transaction />
+    </>
   );
 }
 
