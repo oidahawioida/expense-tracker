@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoAdd } from "react-icons/io5";
 
-const Transaction = ({ setSpendings, spendings }) => {
+const Transaction = ({ setSpendings }) => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
   const [showForm, setShowForm] = useState(false);
@@ -14,8 +14,8 @@ const Transaction = ({ setSpendings, spendings }) => {
       return;
     }
 
-    setSpendings([
-      ...spendings,
+    setSpendings((prevSpendings) => [
+      ...prevSpendings,
       { amount, text, type: amount < 0 ? "expense" : "income" },
     ]);
 
