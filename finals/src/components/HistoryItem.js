@@ -10,7 +10,7 @@ const HistoryItem = ({ amount, title, type }) => {
       <p className="historyTitle">{title}</p>
       <p className="historyAmount">
         {type === "income" ? "+ " : "- "}
-        {amount.toFixed(2)}
+        {amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}
       </p>
     </div>
   );
